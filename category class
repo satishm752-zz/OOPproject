@@ -1,0 +1,148 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+class Category
+{
+public :
+map<string, int> ElectricalPrice;
+map<string, int> ElectricalQuantity;
+set<string> Electrical ;
+set<string> ::iterator ElectricalIt;
+
+map<string, int> FashionPrice;
+map<string, int> FashionQuantity;
+set<string> Fashion ;
+
+map<string, int> DayTodayPrice;
+map<string, int> DayTodayQuantity;
+set<string> DayToday ;
+
+map<string, int> StationaryPrice;
+map<string, int> StationaryQuantity;
+set<string> Stationary ;
+
+
+
+//Constructor adds objects to all categories
+Category(){
+	
+//electrical
+	
+	Electrical.insert("mobile");
+	Electrical.insert("refrigerator");
+	Electrical.insert("pendrive");
+	Electrical.insert("laptop");
+	Electrical.insert("television");
+	
+	ElectricalPrice["mobile"]=10000;
+	ElectricalQuantity["mobile"]=10;
+	
+	ElectricalPrice["refrigerator"]=18000;
+	ElectricalQuantity["refrigerator"]=10;
+	
+	ElectricalPrice["pendrive"]=500;
+	ElectricalQuantity["pendrive"]=10;
+	
+	ElectricalPrice["laptop"]=50000;
+	ElectricalQuantity["laptop"]=10;
+	
+	ElectricalPrice["television"]=14000;
+	ElectricalQuantity["television"]=10;
+	
+	
+// clothing	
+
+	Fashion.insert("sarees");
+	Fashion.insert("tshirt");
+	Fashion.insert("jeens");
+	Fashion.insert("shirt");
+	Fashion.insert("goggle");
+	
+	FashionPrice["sarees"]=1500;
+	FashionQuantity["sarees"]=8;
+	
+	FashionPrice["tshirt"]=500;
+	FashionQuantity["tshirt"]=8;
+	
+	FashionPrice["jeens"]=1500;
+	FashionQuantity["jeens"]=8;
+	
+	FashionPrice["shirt"]=600;
+	FashionQuantity["shirt"]=8;
+	
+	FashionPrice["goggle"]=1000;
+	FashionQuantity["goggle"]=8;
+	
+	
+//Day-to-day needs
+	
+	DayToday.insert("biscuit");
+	DayToday.insert("shampoo");
+	DayToday.insert("facewash");
+	DayToday.insert("soap");
+	DayToday.insert("bodyspray");
+	
+	DayTodayPrice["biscuit"]=20;
+	DayTodayQuantity["biscuit"]=50;
+	
+	DayTodayPrice["shampoo"]=80;
+	DayTodayQuantity["shampoo"]=50;
+	
+	DayTodayPrice["facewash"]=20;
+	DayTodayQuantity["facewash"]=50;
+	
+	DayTodayPrice["soap"]=25;
+	DayTodayQuantity["soap"]=50;
+	
+	DayTodayPrice["bodyspray"]=200;
+	DayTodayQuantity["bodyspray"]=50;
+	
+	
+//stationary
+
+	Stationary.insert("pen");
+	Stationary.insert("notebook");
+	Stationary.insert("book");
+	Stationary.insert("pencil");
+	Stationary.insert("nailcutter");
+	
+	StationaryPrice["pen"]=20;
+	StationaryQuantity["pen"]=100;
+	
+	StationaryPrice["notebook"]=50;
+	StationaryQuantity["notebook"]=100;
+	
+	StationaryPrice["book"]=500;
+	StationaryQuantity["book"]=100;
+	
+	StationaryPrice["pencil"]=10;
+	StationaryQuantity["pencil"]=100;
+	
+	StationaryPrice["nailcutter"]=20;
+	StationaryQuantity["nailcutter"]=100;
+	
+	
+}
+	
+	
+
+};
+
+
+int main(){
+	
+Category s;
+int i;
+
+s.ElectricalIt=s.Electrical.begin();
+
+for(s.ElectricalIt;s.ElectricalIt!=s.Electrical.end();s.ElectricalIt++)
+	cout<<*s.ElectricalIt<<"\n";
+
+	
+	
+	
+}
+
+
+
