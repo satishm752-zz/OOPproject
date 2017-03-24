@@ -1,9 +1,21 @@
 #include<bits/stdc++.h>
+#include<stdlib.h>
 using namespace std;
 
-class Category
+//To use these classes friend classes of Category class before defining them, they are just declared here.
+
+class Vendor;
+class ShoppingComplex;
+class Customer;
+
+
+
+class Category 
 {
-public :
+	
+private :
+friend Customer;	
+friend Vendor;
 map<string, int> ElectricalPrice;
 map<string, int> ElectricalQuantity;
 set<string> Electrical ;
@@ -12,18 +24,21 @@ set<string> ::iterator ElectricalIt;
 map<string, int> FashionPrice;
 map<string, int> FashionQuantity;
 set<string> Fashion ;
+set<string> ::iterator FashionIt;
 
 map<string, int> DayTodayPrice;
 map<string, int> DayTodayQuantity;
 set<string> DayToday ;
+set<string> ::iterator DayTodayIt;
 
 map<string, int> StationaryPrice;
 map<string, int> StationaryQuantity;
 set<string> Stationary ;
-
+set<string> ::iterator StationaryIt;
 
 
 //Constructor adds objects to all categories
+public :
 Category(){
 	
 //electrical
@@ -126,22 +141,139 @@ Category(){
 	
 	
 
+} s;
+
+
+
+class Vendor 
+{
+public:
+string id;
+string password;
+string AnswerOfSecurityQuestion;	
+Vendor(string id1,string password1);	
+};
+
+Vendor::Vendor(string id1,string password1){
+	
+	id=id1;
+	password=password1;
+	
+	
+	
+}
+
+class Customer
+{
+		
+	
 };
 
 
+
+
+class ShoppingComplex : public Vendor 
+{
+	private:
+	string name;
+	string address;
+	int n,i,j,k;
+	
+	public :
+	
+	AskVendorOrCustomer(){
+		
+	}
+		
+	ShoppingComplex(string name1,string address1,string id1,string password1);	
+	
+	void display();
+	ShoppingComplex();
+	MainMenu();
+	
+	
+};
+
+ShoppingComplex :: ShoppingComplex(string name1,string address1,string id1,string password1):Vendor(id1,password1){
+
+	name=name1;
+	address=address1;
+	
+		
+}
+
+ShoppingComplex ::MainMenu(){
+	
+	string name1,mobileNumber1;
+	
+	while(1){
+		
+		cout<<"\n\n\n\n\n\n\n\n\n\n\t\t***************** WELCOME TO "<<name<<" SHOPPING COMPLEX *****************";	
+		cout<<"\n\n\n\n\n";
+		cout<<"\t\t\t\t\tEnter who are you\n\t\t\t\t\t1.Vendor\n\t\t\t\t\t2.Customer\n\n\n\n\n\t\t\tEnter 0 to exit\n\n\n\n\n\n";
+		cin>>n;
+		
+		switch(n){
+			
+			case 1:
+				system("cls");
+				cout<<"Enter your name"
+				Customer c;
+			
+		}
+	
+	}
+}
+
+void ShoppingComplex :: display(){
+	cout<<"      "<<name<<"\n";
+	cout<<"      "<<address<<"\n";
+	
+}
+
+
+
+
+
 int main(){
+
+
+
+
+
+
+ShoppingComplex sh("BHARAT","Surathkal","satish","abcdefg");
+/*
+ This code is to display all items and their prices along with their quantities
 	
 Category s;
 int i;
 
+s.FashionIt=s.Fashion.begin();
+
+for(s.FashionIt;s.FashionIt!=s.Fashion.end();s.FashionIt++)
+	cout<<*s.FashionIt<<"\t\t"<<s.FashionPrice[*s.FashionIt]<<"\t\t"<<s.FashionQuantity[*s.FashionIt]<<"\n";
+	
 s.ElectricalIt=s.Electrical.begin();
 
 for(s.ElectricalIt;s.ElectricalIt!=s.Electrical.end();s.ElectricalIt++)
-	cout<<*s.ElectricalIt<<"\n";
+	cout<<*s.ElectricalIt<<"\t\t"<<s.ElectricalPrice[*s.ElectricalIt]<<"\t\t"<<s.ElectricalQuantity[*s.ElectricalIt]<<"\n";
+	
+s.DayTodayIt=s.DayToday.begin();
+
+for(s.DayTodayIt;s.DayTodayIt!=s.DayToday.end();s.DayTodayIt++)
+	cout<<*s.DayTodayIt<<"\t\t"<<s.DayTodayPrice[*s.DayTodayIt]<<"\t\t"<<s.DayTodayQuantity[*s.DayTodayIt]<<"\n";
+
+s.StationaryIt=s.Stationary.begin();
+
+for(s.StationaryIt;s.StationaryIt!=s.Stationary.end();s.StationaryIt++)
+	cout<<*s.StationaryIt<<"\t\t"<<s.StationaryPrice[*s.StationaryIt]<<"\t\t"<<s.StationaryQuantity[*s.StationaryIt]<<"\n";			
+*/
+
+
 
 	
-	
-	
+return 0;	
 }
 
 
